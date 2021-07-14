@@ -1,9 +1,9 @@
 .vs/
 
 # Build results
-[Oo]bj
-[Bb]in
-[Dd]ebug
+[Oo]bj/
+[Bb]in/
+[Dd]ebug/
 [Bb]uild/
 
 # User-specific files
