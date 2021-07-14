@@ -1,0 +1,1 @@
+const contactsApp = angular.module("contactsApp", []);

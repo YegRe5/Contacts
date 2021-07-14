@@ -1,0 +1,16 @@
+[
+    {
+        "surname": "Александров",
+        "name": "Александр",
+        "patronymic": "Александрович",
+        "phoneNumber": "649-0873",
+        "email": "alexandrov@mail.ru"
+    }, 
+    {
+        "surname": "Николаев",
+        "name": "Николай",
+        "patronymic": "Николаевич",
+        "phoneNumber": "476-2146",
+        "email": "nikolaev@mail.ru"
+    }
+]
