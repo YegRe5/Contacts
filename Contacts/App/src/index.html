@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="contactsApp">
+<head>
+    <meta charset="utf-8">
+    <title>Справочник контактов</title>
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container" ng-controller="contactsController">
+        <div class="row pb-3 mb-3 border-bottom">
+            <div class="col align-middle">
+                <img src="../assets//img/logo.jpg" alt="logo" height="50" width="50">
+                <h1 class="d-inline-block header-text align-middle">Справочник контактов</h1>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <button class="btn btn-outline-success" ng-click="addContact()">Добавить контакт</button>
+                <button class="btn btn-outline-success" ng-click="removeContact()">Удалить контакт</button>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-success" ng-click="saveContacts()">Сохранить</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Фамилия</th>
+                            <th>Имя </th>
+                            <th>Отчество</th>
+                            <th>Номер телефона</th>
+                            <th>Адрес электронной почты</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="contact in contacts track by $index" 
+                            ng-click="setSelectedContactIndex($index)" 
+                            ng-class="{'table-active': $index === selectedContactIndex}">
+                            <td><input type="text" class="editable-cell" placeholder="Фамилия" ng-model="contact.surname"/></td>
+                            <td><input type="text" class="editable-cell" placeholder="Имя" ng-model="contact.name"/></td>
+                            <td><input type="text" class="editable-cell" placeholder="Отчество" ng-model="contact.patronymic"/></td>
+                            <td><input type="text" class="editable-cell" placeholder="Номер телефона" ng-model="contact.phoneNumber"/></td>
+                            <td><input type="text" class="editable-cell" placeholder="Адрес электронной почты" ng-model="contact.email"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../libs/angular.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/contactsService.js"></script>
+    <script src="scripts/contactsCtrl.js"></script>
+</body>
+</html>
