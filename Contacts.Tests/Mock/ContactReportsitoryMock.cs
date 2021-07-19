@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Sms.Demo.Contacts.Tests
 {
@@ -9,7 +10,7 @@ namespace Sms.Demo.Contacts.Tests
     {
         #region Fields
 
-        private IEnumerable<Contact> _contacts;
+        private IEnumerable<Contact> _contacts = Array.Empty<Contact>();
 
         #endregion
 

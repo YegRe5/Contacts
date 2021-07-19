@@ -40,11 +40,11 @@ namespace Sms.Demo.Contacts.Tests
             _contactService.Save(contacts);
 
             // Assert
-            contacts = _contactRepository
+            var newContacts = _contactRepository
                 .GetAll()
                 .ToArray();
 
-            Assert.AreEqual(contacts.Length, 3);
+            Assert.AreEqual(newContacts.Length, contacts.Length);
         }
 
         [Test]
@@ -61,14 +61,12 @@ namespace Sms.Demo.Contacts.Tests
             _contactRepository.Update(contacts);
 
             // Act
-            _contactService.GetAll();
-
-            // Assert
-            contacts = _contactService
+            var newContacts = _contactService
                 .GetAll()
                 .ToArray();
 
-            Assert.AreEqual(contacts.Length, 3);
+            // Assert
+            Assert.AreEqual(newContacts.Length, contacts.Length);
         }
 
         [Test]
@@ -78,7 +76,10 @@ namespace Sms.Demo.Contacts.Tests
             var contact = new Contact();
 
             // Act
-            TestDelegate saveContact = () => { _contactService.Save(new Contact[] { contact }); };
+            TestDelegate saveContact = () => 
+            { 
+                _contactService.Save(new Contact[] { contact }); 
+            };
 
             // Assert
             Assert.Throws(typeof(ArgumentException), saveContact);
