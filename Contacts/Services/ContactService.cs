@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Sms.Demo.Contacts
 {
@@ -35,8 +37,19 @@ namespace Sms.Demo.Contacts
 
         public void Save(IEnumerable<Contact> contacts)
         {
+            if (contacts.Any(c => String.IsNullOrEmpty(c.Name)))
+            {
+                throw new ArgumentException("Имя контакта должно быть задано");
+            }
+
             _contactRepository.Update(contacts);
             _logger.LogInformation("Список контактов был обновлен!");
+        }
+
+        public void Dispose()
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
 
         #endregion

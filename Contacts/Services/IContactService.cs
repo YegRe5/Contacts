@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Sms.Demo.Contacts
 {
     /// <summary>
     /// Контракт сервиса контактов
     /// </summary>
-    public interface IContactService
+    public interface IContactService : IDisposable
     {
         /// <summary>
         /// Вернуть все контакты

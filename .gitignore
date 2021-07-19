@@ -13,3 +13,5 @@
 *.sln.docstates
 *.exe
 
+# Tests
+TestResults/
