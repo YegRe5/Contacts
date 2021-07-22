@@ -6,7 +6,7 @@ namespace Sms.Demo.Contacts
     /// <summary>
     /// Контракт сервиса контактов
     /// </summary>
-    public interface IContactService : IDisposable
+    public interface IContactService
     {
         /// <summary>
         /// Вернуть все контакты

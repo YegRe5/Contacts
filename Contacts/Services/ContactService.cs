@@ -46,12 +46,6 @@ namespace Sms.Demo.Contacts
             _logger.LogInformation("Список контактов был обновлен!");
         }
 
-        public void Dispose()
-        {
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-        }
-
         #endregion
     }
 }

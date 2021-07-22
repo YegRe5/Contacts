@@ -90,7 +90,7 @@ namespace Sms.Demo.Contacts.Tests
         [TearDown]
         public void TearDown()
         {
-            _contactService.Dispose();
+            //
         }
     }
 }
